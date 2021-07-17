@@ -30,3 +30,20 @@ class Dev(Colaborador):
     def __init__(self, nome, fone, cargo, squad=None):
         super().__init__(nome, fone, squad)
         self.cargo = cargo
+
+while True:
+    squads = []
+    nome_squad = input('\nNome da squad: ')
+    nome_techlead = input('\nNome do techlead da squad: ')
+    fone_techlead = input('\nTelefone do techlead: ')
+
+    squad = Squad(nome_squad)
+    techlead = Colaborador(nome_techlead, fone_techlead)
+    squad.incluir_techlead(techlead)
+    techlead.incluir_squad(squad)
+
+    squads.append(squad)
+
+    option = input('\nDeseja adicionar mais uma squad [S/N]: ')
+    if option in 'Nn':
+        break
