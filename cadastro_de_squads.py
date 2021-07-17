@@ -3,6 +3,9 @@ class Pessoa:
         self.nome = nome
         self.fone = fone
 
+    def exibir(self):
+        print(f'-> {self.nome} - {self.fone}')
+
 
 class Squad:
     def __init__(self, nome, techlead=None, devs=None):
@@ -60,3 +63,11 @@ while True:
     option = input('\nDeseja adicionar mais uma squad [S/N]: ')
     if option in 'Nn':
         break
+
+for squad in squads:
+    print(f'-----------------------------{squad.nome}--------------------')
+    print(f'TeachLead: {squad.techlead.nome}')
+    print('\n-----Devs do squad-----')
+    for dev in squad.devs:
+        dev.exibir()
+    print(f'-----------------------------{squad.nome}--------------------')
